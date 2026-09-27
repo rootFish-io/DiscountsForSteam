@@ -8,7 +8,7 @@ async def connect_db():
 
     pool = await asyncpg.create_pool(
         user='postgres',
-        database='discountsforsteam',
+        database='postgres',
         password='1234567890',
         host='localhost',
         port=5432
