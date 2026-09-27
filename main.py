@@ -1,11 +1,15 @@
 from fastapi import FastAPI, HTTPException
 from contextlib import asynccontextmanager
+
 import asyncio
 import database
 import httpx
+import logging
 
 from tasks.scheduler import scheduler
 from database import connect_db, close_db
+
+logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

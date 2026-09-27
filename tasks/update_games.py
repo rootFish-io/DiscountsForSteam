@@ -2,7 +2,7 @@ import httpx
 import asyncio
 
 async def update_games():
-    print('update_games')
+    logger.info('Update_games')
     url = 'https://www.cheapshark.com/api/1.0/deals'
 
     async with httpx.AsyncClient(headers={'User-Agent': 'SteamDeals/1.0'}, proxy='http://10.41.123.200:10809') as client:
@@ -38,4 +38,4 @@ async def update_games():
             
             await asyncio.sleep(1)
 
-    print('Все игры сохранены')
+    logger.info('All games saved')

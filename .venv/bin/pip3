@@ -1,4 +1,4 @@
-#!/home/user/Документы/ServerFastAPI/.venv/bin/python3.10
+#!/home/user/Документы/DiscountsForSteam/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
