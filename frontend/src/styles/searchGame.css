@@ -1,0 +1,26 @@
+.form-search-game {
+  display: flex;
+  padding: 20px;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-search-game input {
+  background-color: var(--bg-input);
+  border: 1px solid var(--br-input);
+  border-radius: 7px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 15px;
+  outline: none;
+  color: var(--font-color-def);
+  width: 100%;
+}
+
+.form-search-game input::placeholder {
+  color: var(--fort-color-placeholder);
+}

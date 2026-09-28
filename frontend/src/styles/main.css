@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --bg: #091016;
+  --bg-header: #0c151c;
+  --br-header:#151e27;
+
+  --font-color-def: #e0e5eb;
+  --fort-color-placeholder: #828e9c;
+
+  --bg-input: #141c27;
+  --br-input: #252e37;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}

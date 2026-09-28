@@ -4,6 +4,7 @@ import database
 from datetime import datetime, timezone
 
 PROXY = 'http://10.41.123.200:10809' # это только для меня
+HTTPX_TIMEOUT = 30
 BASE_URL = 'https://www.cheapshark.com/api/1.0/deals'
 PAGE_SIZE = 60
 STORE_ID = 1 # Steam
@@ -15,7 +16,6 @@ async def insert_page(conn, games):
             print(f'skip {game["title"]} - no steamAppID')
             continue
 
-        print(game['title'], '-', game['steamAppID'])
         await conn.execute(
             '''
             INSERT INTO games (
@@ -48,7 +48,6 @@ async def get_page(client, pageNumber):
     )
     
     response.raise_for_status()
-    print(pageNumber)
     return response
 
 
@@ -56,7 +55,7 @@ async def update_games():
     print('update_games')
     started_at = datetime.now(timezone.utc)
 
-    async with httpx.AsyncClient(headers={'User-Agent': 'SteamDeals/1.0'}, proxy=PROXY, timeout=30) as client:
+    async with httpx.AsyncClient(headers={'User-Agent': 'SteamDeals/1.0'}, proxy=PROXY, timeout=HTTPX_TIMEOUT) as client:
         response = await get_page(client, 0)
         total_pages = int(response.headers['X-Total-Page-Count'])
 
