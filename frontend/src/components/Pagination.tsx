@@ -7,9 +7,6 @@ interface PaginationProps {
 }
 
 function Pagination({ onSetPage, page, totalPage }: PaginationProps) {
-    console.log(`${page + 1} < ${totalPage / 60}`)
-    console.log(page + 1 > totalPage / 60)
-
     return (
         <section className='pagination'>
             <button className='arrow' onClick={() => onSetPage(-1)}>

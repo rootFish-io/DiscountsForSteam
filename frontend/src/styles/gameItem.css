@@ -1,13 +1,9 @@
 .game-list li {
   display: flex;
   flex-direction: column;
-  margin-bottom: 19px;
-  width: 352px;
 }
 
 .game-list li img {
-  width: 352px;
-  height: 201px;
   border-radius: 7px 7px 0 0;
   border: none;
 }

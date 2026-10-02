@@ -42,7 +42,7 @@ async def root(
 		games_record = await conn.fetch(
 			'''
 			SELECT steam_app_id, name, price, discounted_price FROM games
-			ORDER BY name
+			ORDER BY discounted_price
 			LIMIT $1
 			OFFSET $2
 			''',

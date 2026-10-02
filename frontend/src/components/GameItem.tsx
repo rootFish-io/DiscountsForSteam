@@ -1,5 +1,5 @@
 import '../styles/gameItem.css'
-import fallbackImage from '../assets/fallbackImage.jpeg'
+import fallbackImage from '../assets/fallbackImage.png'
 import type { Game } from "../types/game"
 
 function GameItem({ steam_app_id, name, price, discounted_price}: Game) {
