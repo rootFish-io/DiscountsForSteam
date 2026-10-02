@@ -1,26 +1,67 @@
 .form-search-game {
   display: flex;
   padding: 20px;
-  max-width: 1500px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   box-sizing: border-box;
+  position: sticky;
+  align-items: center;
+  top: 0;
+  gap: 20px;
+  max-width: 1500px;
 }
 
-.form-search-game input {
+.form-search-game label {
   background-color: var(--bg-input);
   border: 1px solid var(--br-input);
+  backdrop-filter: blur(50px);
   border-radius: 7px;
-  font-family: Inter;
+  font-family: inter;
   font-weight: 400;
   font-size: 14px;
   padding: 15px;
   outline: none;
   color: var(--font-color-def);
   width: 100%;
+  display: flex;
+  gap: 10px;
+  cursor: text;
 }
 
-.form-search-game input::placeholder {
+.form-search-game label input { 
+  background-color: transparent;
+  font-family: inter;
+  font-weight: 400;
+  font-size: 14px;
+  outline: none;
+  color: var(--font-color-def);
+  border: none;
+  flex: 1;  
+}
+
+.form-search-game label input::placeholder {
   color: var(--fort-color-placeholder);
+}
+
+.form-search-game .filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: var(--bg-input);
+  border: 1px solid var(--br-input);
+  backdrop-filter: blur(50px);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.form-search-game .filter span {
+
+  font-family: inter;
+  font-weight: 600;
+  font-size: 14px;
+  outline: none;
+  color: var(--font-color-def);
 }

@@ -1,0 +1,53 @@
+.game-list li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 19px;
+  width: 352px;
+}
+
+.game-list li img {
+  width: 352px;
+  height: 201px;
+  border-radius: 7px 7px 0 0;
+  border: none;
+}
+
+.game-list li .info {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  background: var(--bg-li-info);
+  border-radius: 0 0 7px 7px;
+  padding: 13px;
+}
+
+.game-list li .info .name {
+  font-family: Inter;
+  color: var(--font-color-def);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: normal;
+  word-break: normal;
+  line-height: 1.4;
+}
+
+.game-list li .info .container-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.game-list li .info .container-price span {
+  font-family: inter;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--font-color-accent)
+}
+
+.game-list li .info .container-price del {
+  font-family: inter;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--fort-color-placeholder)
+}
+
