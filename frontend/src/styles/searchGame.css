@@ -10,6 +10,7 @@
   top: 0;
   gap: 20px;
   max-width: 1500px;
+  z-index: 400;
 }
 
 .form-search-game label {

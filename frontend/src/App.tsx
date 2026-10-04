@@ -5,23 +5,31 @@ import SearchGame from "./components/SearchGame"
 import type { GamesResponse, Game } from "./types/game"
 import GameList from "./components/GameList"
 import Pagination from './components/Pagination'
+import GameSkeleton from './components/GameSkeleton'
 
 function App() {
 	const [games, setGames] = useState<Game[]>([])
 	const [page, setPage] = useState(1)
 	const [totalPage, setTotalPage] = useState(0)
+	const [loading, setLoading] = useState(true)
 
 	async function fetchGames(page: number, limit: number): Promise<GamesResponse> {
 		const response = await fetch(`http://127.0.0.1:8000/games?page=${page}&limit=${limit}`)
-
-			return response.json()
+		return response.json()
 	}
 
 	useEffect(() => {
 		async function loadGames() {
-			const data = await fetchGames(page, 60)
-			setGames(data.games)
-			setTotalPage(data.total)
+			setLoading(true)
+
+			try {				
+				const data = await fetchGames(page, 60)
+
+				setGames(data.games)
+				setTotalPage(data.total)
+			} finally {
+				setLoading(false)
+			}
 		}
 
 		loadGames()
@@ -39,7 +47,11 @@ function App() {
 		<>
 			<Header />
 			<SearchGame />
-			<GameList games={games} />
+			{
+				loading
+				? <GameSkeleton/>
+				: <GameList games={games}/>
+			}
 			<Pagination onSetPage={onSetPage} page={page} totalPage={totalPage}/>
 		</>
 	)
