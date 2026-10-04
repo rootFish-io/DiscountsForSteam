@@ -30,20 +30,27 @@
 .game-list li .info .container-price {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 }
 
-.game-list li .info .container-price span {
+.game-list li .info .container-price .price span {
   font-family: inter;
   font-size: 14px;
   font-weight: 700;
   color: var(--font-color-accent)
 }
 
-.game-list li .info .container-price del {
+.game-list li .info .container-price .price del {
   font-family: inter;
   font-size: 12px;
   font-weight: 500;
   color: var(--fort-color-placeholder)
 }
 
+.game-list li .info .container-price .save {
+  font-family: inter;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--fort-color-placeholder)
+}

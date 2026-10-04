@@ -2,11 +2,11 @@ import '../styles/gameItem.css'
 import fallbackImage from '../assets/fallbackImage.png'
 import type { Game } from "../types/game"
 
-function GameItem({ steam_app_id, name, price, discounted_price}: Game) {
+function GameItem({ name, price, discounted_price, url, discount_percent}: Game) {
 	return (
 		<li>
 			<img 
-				src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${steam_app_id}/capsule_616x353.jpg`} 
+				src={url} 
 				onError={(e) => {
 					const target = e.currentTarget
 					target.onerror = null
@@ -17,8 +17,11 @@ function GameItem({ steam_app_id, name, price, discounted_price}: Game) {
 				<div className='name'>{name}</div>
 
 				<div className='container-price'>
-					<span>{discounted_price}$</span>
-					<del>{price}$</del>
+					<div className='price'>
+						<span>{discounted_price}$
+						</span> <del>{price}$</del>
+					</div>
+						<span className='save'>-{discount_percent}%</span>
 				</div>
 			</div>
 		</li>

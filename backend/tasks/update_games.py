@@ -3,7 +3,7 @@ import asyncio
 import database
 from datetime import datetime, timezone
 
-PROXY = 'http://10.41.123.200:10809' # это только для меня
+PROXY = 'http://10.111.176.227:10809' # это только для меня
 HTTPX_TIMEOUT = 30
 BASE_URL = 'https://www.cheapshark.com/api/1.0/deals'
 PAGE_SIZE = 60
@@ -16,29 +16,41 @@ async def insert_page(conn, games):
             print(f'skip {game["title"]} - no steamAppID')
             continue
 
+        print(game)
+
         await conn.execute(
             '''
-            INSERT INTO games (
+            insert into games (
                 steam_app_id,
                 name,
                 price,
                 discounted_price,
-                updated_at
+                updated_at,
+                url,
+                discount_percent,
+                steam_rating_percent
             )
-            VALUES ($1, $2, $3, $4, NOW())
+            values ($1, $2, $3, $4, now(), $5, $6, $7)
 
-            ON CONFLICT (steam_app_id)
-            DO UPDATE SET
-                name = EXCLUDED.name,
-                price = EXCLUDED.price,
-                discounted_price = EXCLUDED.discounted_price,
-                updated_at = NOW()
+            on conflict (steam_app_id)
+            do update set
+                name = excluded.name,
+                price = excluded.price,
+                discounted_price = excluded.discounted_price,
+                updated_at = now(),
+                url = excluded.url,
+                discount_percent = excluded.discount_percent,
+                steam_rating_percent = excluded.steam_rating_percent 
             ''',
             int(game['steamAppID']),
             game['title'],
             game['normalPrice'],
-            game['salePrice']
+            game['salePrice'],
+            game['thumb'],
+            round(float(game['savings'])),
+            int(game['steamRatingPercent'])
         )
+        print(game['title'])
 
 
 async def get_page(client, pageNumber):

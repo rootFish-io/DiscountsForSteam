@@ -18,8 +18,6 @@ function App() {
 	}
 
 	useEffect(() => {
-		console.log('заброс на сервер')
-
 		async function loadGames() {
 			const data = await fetchGames(page, 60)
 			setGames(data.games)

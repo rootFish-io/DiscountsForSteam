@@ -9,12 +9,12 @@ from database import connect_db, close_db
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-	task = asyncio.create_task(scheduler())
+	#task = asyncio.create_task(scheduler())
 	await connect_db()
 
 	yield
 
-	task.cancel()
+	#task.cancel()
 	await close_db()
 
 
@@ -41,8 +41,17 @@ async def root(
 	async with database.pool.acquire() as conn:
 		games_record = await conn.fetch(
 			'''
-			SELECT steam_app_id, name, price, discounted_price FROM games
-			ORDER BY discounted_price
+			SELECT 
+				steam_app_id,
+				name, 
+				price, 
+				discounted_price,
+				updated_at,
+                url,
+                discount_percent,
+                steam_rating_percent
+			FROM games
+			ORDER BY discount_percent
 			LIMIT $1
 			OFFSET $2
 			''',

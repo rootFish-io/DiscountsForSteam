@@ -13,10 +13,11 @@ function GameList({ games }: GameListProps) {
 			games.map((game) => (
 				<GameItem 
 					key={game.steam_app_id}
-					steam_app_id={game.steam_app_id}
 					name={game.name}
 					price={game.price}
 					discounted_price={game.discounted_price}
+					url={game.url}
+					discount_percent={game.discount_percent}
 				/>
 			))
 		}  
