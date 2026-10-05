@@ -1,4 +1,4 @@
-import '../styles/pagination.css'
+import "../styles/pagination.css"
 
 interface PaginationProps {
     onSetPage: (action: number) => void
@@ -8,26 +8,54 @@ interface PaginationProps {
 
 function Pagination({ onSetPage, page, totalPage }: PaginationProps) {
     return (
-        <section className='pagination'>
-            <button className='arrow' onClick={() => onSetPage(-1)}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={page - 1 <= 0 ? undefined : 'active'}>
-	                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-	                <path d="M5 12l14 0" />
-	                <path d="M5 12l6 6" />
-	                <path d="M5 12l6 -6" />
+        <section className="pagination">
+            <button className="arrow" onClick={() => onSetPage(-1)}>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={page - 1 <= 0 ? undefined : "active"}
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l14 0" />
+                    <path d="M5 12l6 6" />
+                    <path d="M5 12l6 -6" />
                 </svg>
-                <span className={page - 1 <= 0 ? undefined : 'active'}>Пребедущая</span>
+                <span className={page - 1 <= 0 ? undefined : "active"}>
+                    Пребедущая
+                </span>
             </button>
 
-            <div className='count-page'>{page}</div>
+            <div className="count-page">{page}</div>
 
-            <button className='arrow' onClick={() => onSetPage(1)}>
-                <span className={page + 1 < totalPage / 59 ? 'active' : undefined}>Следующая</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={page + 1 < totalPage / 59 ? 'active' : undefined}>
-	                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-	                <path d="M5 12l14 0" />
-	                <path d="M13 18l6 -6" />
-	                <path d="M13 6l6 6" />
+            <button className="arrow" onClick={() => onSetPage(1)}>
+                <span
+                    className={page + 1 < totalPage / 59 ? "active" : undefined}
+                >
+                    Следующая
+                </span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={page + 1 < totalPage / 59 ? "active" : undefined}
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M5 12l14 0" />
+                    <path d="M13 18l6 -6" />
+                    <path d="M13 6l6 6" />
                 </svg>
             </button>
         </section>

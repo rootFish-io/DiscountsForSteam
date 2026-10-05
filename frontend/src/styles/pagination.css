@@ -1,53 +1,51 @@
 .pagination {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    box-sizing: border-box;
-    align-items: center;
-    max-width: 1500px;
-    justify-content: space-between;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  max-width: 1500px;
+  justify-content: space-between;
 }
 
 .pagination .arrow {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    padding: 20px;
-    background: transparent;
-    border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 20px;
+  background: transparent;
+  border: none;
 }
 
 .pagination .arrow span {
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    opacity: 0.2;
-    color: var(--fort-color-placeholder);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.2;
+  color: var(--fort-color-placeholder);
 }
 
 .pagination .arrow span.active {
-    opacity: 1;
-    
+  opacity: 1;
 }
 
 .pagination .arrow svg {
-    opacity: 0.2;
-    color: var(--fort-color-placeholder);
+  opacity: 0.2;
+  color: var(--fort-color-placeholder);
 }
 
-
 .pagination .arrow svg.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .pagination .count-page {
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--fort-color-placeholder);
-    padding: 10px;
-    border-radius: 7px;
-    border: 1px solid var(--br-header);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--fort-color-placeholder);
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid var(--br-header);
 }

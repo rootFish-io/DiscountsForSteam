@@ -1,15 +1,13 @@
-import '../styles/gameSkeleton.css'
+import "../styles/gameSkeleton.css"
 
 function GameSkeleton() {
     const el = []
 
-    for (let i = 0; i <  60; i++) {
-        el.push(<li></li>)
+    for (let i = 0; i < 60; i++) {
+        el.push(<li key={i}></li>)
     }
 
-    return (
-        <ul className='skeleton-list'>{el}</ul>
-    )
+    return <ul className="skeleton-list">{el}</ul>
 }
 
 export default GameSkeleton
