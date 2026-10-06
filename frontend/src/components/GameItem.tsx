@@ -1,4 +1,4 @@
-import "../styles/gameItem.css"
+import styles from "../styles/gameItem.module.css"
 import fallbackImage from "../assets/fallbackImage.png"
 import type { Game } from "../types/game"
 
@@ -19,14 +19,16 @@ function GameItem({
                     target.src = fallbackImage
                 }}
             />
-            <div className="info">
-                <div className="name">{name}</div>
+            <div className={styles.info}>
+                <div className={styles.title}>{name}</div>
 
-                <div className="container-price">
-                    <div className="price">
+                <div className={styles.containerPrice}>
+                    <div className={styles.price}>
                         <span>{discounted_price}$</span> <del>{price}$</del>
                     </div>
-                    <span className="save">-{discount_percent}%</span>
+                    <span className={styles.discountpercent}>
+                        -{discount_percent}%
+                    </span>
                 </div>
             </div>
         </li>

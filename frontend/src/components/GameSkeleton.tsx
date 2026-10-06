@@ -1,4 +1,4 @@
-import "../styles/gameSkeleton.css"
+import styles from "../styles/gameSkeleton.module.css"
 
 function GameSkeleton() {
     const el = []
@@ -7,7 +7,7 @@ function GameSkeleton() {
         el.push(<li key={i}></li>)
     }
 
-    return <ul className="skeleton-list">{el}</ul>
+    return <ul className={styles.skeletonGames}>{el}</ul>
 }
 
 export default GameSkeleton

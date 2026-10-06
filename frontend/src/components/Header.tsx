@@ -1,8 +1,8 @@
-import "../styles/header.css"
+import styles from "../styles/header.module.css"
 
 function Header() {
     return (
-        <header>
+        <header className={styles.header}>
             <div>
                 <svg
                     width="20"

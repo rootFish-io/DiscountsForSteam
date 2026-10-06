@@ -1,8 +1,14 @@
-import "../styles/searchGame.css"
+import type { FormEvent } from 'react'
+import styles from "../styles/searchGame.module.css"
 
-function SearchGame() {
+interface SearchGameProps {
+    toggleFilters: () => void
+    handlerSubmit: (e: FormEvent<HTMLFormElement>) => void
+}
+
+function SearchGame({ toggleFilters, handlerSubmit}: SearchGameProps) {
     return (
-        <form className="form-search-game">
+        <form className={styles.formSearchGame} onSubmit={(e) => handlerSubmit(e)}>
             <label>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +29,7 @@ function SearchGame() {
                 <input placeholder="Поиск игр..." />
             </label>
 
-            <div className="filter">
+            <button className={styles.btnOpenFilter} onClick={toggleFilters}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -48,7 +54,7 @@ function SearchGame() {
                     <path d="M19 18l1 0" />
                 </svg>
                 <span>Фильтры</span>
-            </div>
+            </button>
         </form>
     )
 }

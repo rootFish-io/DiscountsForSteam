@@ -1,0 +1,63 @@
+.filterModal {
+  position: fixed;
+  z-index: 600;
+  background: var(--bg-shadow-modal);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.filterModal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.formFilters {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  background: var(--bg);
+  border: 1px solid var(--br-header);
+  border-radius: 7px;
+  padding: 10px 20px;
+  width: 400px; /* УБРАТЬ !!! */
+}
+
+.formFilters header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.containerTitle span {
+  font-family: inter;
+  font-weight: 600;
+  font-size: 16px;
+  outline: none;
+  color: var(--font-color-def);
+}
+
+.btnCloseFilter {
+  background: transparent;
+  border: none;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,4 +1,4 @@
-.form-search-game {
+.formSearchGame {
   display: flex;
   padding: 20px;
   margin-left: auto;
@@ -13,7 +13,7 @@
   z-index: 400;
 }
 
-.form-search-game label {
+.formSearchGame label {
   background-color: var(--bg-input);
   border: 1px solid var(--br-input);
   backdrop-filter: blur(50px);
@@ -30,7 +30,7 @@
   cursor: text;
 }
 
-.form-search-game label input {
+.formSearchGame label input {
   background-color: transparent;
   font-family: inter;
   font-weight: 400;
@@ -41,11 +41,11 @@
   flex: 1;
 }
 
-.form-search-game label input::placeholder {
+.formSearchGame label input::placeholder {
   color: var(--fort-color-placeholder);
 }
 
-.form-search-game .filter {
+.formSearchGame .btnOpenFilter {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -58,7 +58,7 @@
   cursor: pointer;
 }
 
-.form-search-game .filter span {
+.formSearchGame .btnOpenFilter span {
   font-family: inter;
   font-weight: 600;
   font-size: 14px;

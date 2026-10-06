@@ -1,4 +1,4 @@
-import "../styles/pagination.css"
+import styles from "../styles/pagination.module.css"
 
 interface PaginationProps {
     onSetPage: (action: number) => void
@@ -8,8 +8,8 @@ interface PaginationProps {
 
 function Pagination({ onSetPage, page, totalPage }: PaginationProps) {
     return (
-        <section className="pagination">
-            <button className="arrow" onClick={() => onSetPage(-1)}>
+        <section className={styles.pagination}>
+            <button className={styles.arrow} onClick={() => onSetPage(-1)}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -20,23 +20,23 @@ function Pagination({ onSetPage, page, totalPage }: PaginationProps) {
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className={page - 1 <= 0 ? undefined : "active"}
+                    className={page - 1 <= 0 ? undefined : styles.active}
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M5 12l14 0" />
                     <path d="M5 12l6 6" />
                     <path d="M5 12l6 -6" />
                 </svg>
-                <span className={page - 1 <= 0 ? undefined : "active"}>
+                <span className={page - 1 <= 0 ? undefined : styles.active}>
                     Пребедущая
                 </span>
             </button>
 
-            <div className="count-page">{page}</div>
+            <div className={styles.countPage}>{page}</div>
 
-            <button className="arrow" onClick={() => onSetPage(1)}>
+            <button className={styles.arrow} onClick={() => onSetPage(1)}>
                 <span
-                    className={page + 1 < totalPage / 59 ? "active" : undefined}
+                    className={page + 1 < totalPage / 59 ? styles.active : undefined}
                 >
                     Следующая
                 </span>
@@ -50,7 +50,7 @@ function Pagination({ onSetPage, page, totalPage }: PaginationProps) {
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className={page + 1 < totalPage / 59 ? "active" : undefined}
+                    className={page + 1 < totalPage / 59 ? styles.active : undefined}
                 >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M5 12l14 0" />

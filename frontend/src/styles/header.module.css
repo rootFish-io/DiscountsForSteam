@@ -1,4 +1,4 @@
-header {
+.header {
   background-color: var(--bg-header);
   border: 1px solid var(--br-header);
   display: flex;
@@ -8,7 +8,7 @@ header {
   color: var(--font-color-def);
 }
 
-header div {
+.header div {
   display: flex;
   align-items: center;
   gap: 10px;

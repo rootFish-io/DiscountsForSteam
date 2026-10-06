@@ -1,4 +1,4 @@
-import "../styles/gameList.css"
+import styles from "../styles/gameList.module.css"
 import type { Game } from "../types/game"
 import GameItem from "./GameItem"
 
@@ -8,7 +8,7 @@ interface GameListProps {
 
 function GameList({ games }: GameListProps) {
     return (
-        <ul className="game-list">
+        <ul className={styles.gameList}>
             {games.map((game) => (
                 <GameItem
                     key={game.steam_app_id}

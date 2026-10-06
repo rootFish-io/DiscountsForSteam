@@ -1,4 +1,4 @@
-.skeleton-list {
+.skeletonGames {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.skeleton-list li {
+.skeletonGames li {
   aspect-ratio: 16 / 9;
   background-color: var(--bg-li-info);
   border-radius: 7px;
@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 
-.skeleton-list li::after {
+.skeletonGames li::after {
   content: "";
   position: absolute;
   top: 0;

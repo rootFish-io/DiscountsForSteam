@@ -1,4 +1,4 @@
-.game-list li {
+li {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -16,14 +16,14 @@
   }
 }
 
-.game-list li img {
+li img {
   border-radius: 7px 7px 0 0;
   border: none;
   aspect-ratio: 2.66 / 1; 
   background-color: var(--br-header);
 }
 
-.game-list li .info {
+li .info {
   display: flex;
   flex-direction: column;
   gap: 13px;
@@ -32,7 +32,7 @@
   padding: 13px;
 }
 
-.game-list li .info .name {
+li .info .title {
   font-family: Inter;
   color: var(--font-color-def);
   font-size: 14px;
@@ -42,30 +42,31 @@
   line-height: 1.4;
 }
 
-.game-list li .info .container-price {
+li .info .containerPrice {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
 }
 
-.game-list li .info .container-price .price span {
+li .info .containerPrice .price span {
   font-family: inter;
   font-size: 14px;
   font-weight: 700;
   color: var(--font-color-accent);
 }
 
-.game-list li .info .container-price .price del {
+li .info .containerPrice .price del {
   font-family: inter;
   font-size: 12px;
   font-weight: 500;
   color: var(--fort-color-placeholder);
 }
 
-.game-list li .info .container-price .save {
+li .info .containerPrice .discountpercent {
   font-family: inter;
   font-size: 13px;
   font-weight: 400;
   color: var(--fort-color-placeholder);
 }
+  
