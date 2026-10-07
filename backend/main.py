@@ -52,7 +52,7 @@ async def root(
                 discount_percent,
                 steam_rating_percent
 			FROM games
-			ORDER BY discount_percent
+			ORDER BY discounted_price DESC
 			LIMIT $1
 			OFFSET $2
 			""",
@@ -60,8 +60,16 @@ async def root(
             (page - 1) * limit,
         )
 
-        total = await conn.fetch("SELECT COUNT(*) FROM games")
+        total = await conn.fetch("SELECT MAX(discounted_price), COUNT(*) FROM games")
+                
 
     games = [dict(record) for record in games_record]
 
-    return {"games": games, "page": page, "limit": limit, "total": total[0]["count"]}
+
+    return {
+        "games": games, 
+        "page": page, 
+        "limit": limit, 
+        "total": total[0]["count"],
+        "max_discounted_price": total[0]['max']
+    }

@@ -6,6 +6,7 @@ export function useGames(page: number) {
     const [games, setGames] = useState<Game[]>([])
     const [totalPage, setTotalPage] = useState(0)
     const [loading, setLoading] = useState(true)
+    const [maxDiscountedPrice, setMaxDiscountedPrice] = useState(0)
 
     useEffect(() => {
         async function loadGames() {
@@ -16,6 +17,7 @@ export function useGames(page: number) {
 
                 setGames(data.games)
                 setTotalPage(data.total)
+                setMaxDiscountedPrice(data.max_discounted_price)
             } finally {
                 setLoading(false)
             }
@@ -28,5 +30,6 @@ export function useGames(page: number) {
         games,
         totalPage,
         loading,
+        maxDiscountedPrice,
     }
 }

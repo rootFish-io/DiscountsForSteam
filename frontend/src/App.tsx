@@ -12,7 +12,8 @@ import { useGames } from "./hooks/useGames"
 function App() {
     const [page, setPage] = useState(1)
     const [isFilterOpen, setIsFilterOpen] = useState(false)
-    const { games, totalPage, loading } = useGames(page)
+
+    const { games, totalPage, loading, maxDiscountedPrice } = useGames(page)
 
     function onSetPage(action: number) {
         if (page + action > 0 && page + action < totalPage / 59) {
@@ -31,16 +32,26 @@ function App() {
 
     return (
         <>
-            <Header />
-            <SearchGame toggleFilters={toggleFilters} handlerSubmit={handlerSubmit}/>
+            <Header page={page}/>
+            <SearchGame
+                toggleFilters={toggleFilters}
+                handlerSubmit={handlerSubmit}
+            />
+
             {loading ? <GameSkeleton /> : <GameList games={games} />}
+
             <Pagination
                 onSetPage={onSetPage}
                 page={page}
                 totalPage={totalPage}
             />
 
-            <FilterModal isOpen={isFilterOpen} handlerSubmit={handlerSubmit} toggleFilter={toggleFilters}/>
+            <FilterModal
+                isOpen={isFilterOpen}
+                handlerSubmit={handlerSubmit}
+                toggleFilter={toggleFilters}
+                maxDiscountedPrice={maxDiscountedPrice}
+            />
         </>
     )
 }

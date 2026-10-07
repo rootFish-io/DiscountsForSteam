@@ -1,6 +1,10 @@
 import styles from "../styles/header.module.css"
 
-function Header() {
+interface HeaderProps {
+    page: number
+}
+
+function Header({ page }: HeaderProps) {
     return (
         <header className={styles.header}>
             <div>
@@ -24,6 +28,7 @@ function Header() {
                 </svg>
                 Discounts For Steam
             </div>
+            <span title={`Текущая страница: ${page}`}>{page}</span>
         </header>
     )
 }
